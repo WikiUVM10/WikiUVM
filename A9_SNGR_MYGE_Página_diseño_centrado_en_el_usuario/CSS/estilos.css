@@ -1,0 +1,525 @@
+@charset "UTF-8";
+/* =====================================
+   WIKIDESIGN
+   Tema: Diseño centrado en el usuario
+   ===================================== */
+
+/* 1. CONFIGURACIÓN GENERAL */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e8e8ed;
+    background-color: #0d172a;
+
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "nav aside"
+        "footer footer";
+    gap: 0 22px;
+}
+
+/* 2. ENCABEZADO PRINCIPAL */
+header {
+    grid-area: header;
+    background-color: #29265e;
+    padding: 22px 30px;
+    border-bottom: 3px solid #7770c9;
+}
+
+header h1 {
+    margin: 0;
+    color: #c4df65;
+    font-size: 27px;
+    line-height: 1.3;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* 3. MENÚ DE TEMAS */
+nav {
+    grid-area: nav;
+    align-self: stretch;
+    background-color: #605995;
+    padding: 25px 15px;
+    border-radius: 0 0 65px 0;
+}
+
+nav h2 {
+    margin: 0 0 18px;
+    color: #c4df65;
+    font-size: 17px;
+}
+
+nav p {
+    margin: 0 0 8px;
+}
+
+nav a {
+    display: block;
+    padding: 7px 5px;
+    color: #e0dcff;
+    font-size: 12px;
+    line-height: 1.4;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #29265e;
+    color: #c4df65;
+    outline: none;
+}
+
+/* 4. CONTENIDO DEL TEMA */
+main {
+    grid-area: main;
+    min-width: 0;
+    padding: 20px 25px 5px;
+}
+
+main h1 {
+    margin: 0 0 25px;
+    color: #c4df65;
+    font-size: 30px;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+main h2 {
+    margin: 25px 0 15px;
+    color: #c4df65;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+main p {
+    margin: 0 0 22px;
+    padding: 25px;
+    color: #292929;
+    background-color: #d9d9d9;
+    border-radius: 30px;
+    line-height: 1.55;
+    font-size: 13px;
+}
+
+/* 5. IMÁGENES Y RECURSOS MULTIMEDIA */
+aside {
+    grid-area: aside;
+    min-width: 0;
+    margin: 0;
+    padding: 10px 25px 30px;
+    color: #e8e8ed;
+}
+
+aside img {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 15px auto 25px;
+    border: 2px solid #a8c943;
+    object-fit: contain;
+}
+
+/* Imágenes dentro del contenido */
+main img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 6. PIE DE PÁGINA */
+footer {
+    grid-area: footer;
+    align-self: end;
+    padding: 22px 30px;
+    color: #bdb9dc;
+    background-color: #29265e;
+    border-radius: 60px 60px 0 0;
+    text-align: center;
+    font-size: 11px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* 7. ENLACES Y ELEMENTOS INTERACTIVOS */
+a {
+    transition: color 0.25s ease;
+}
+
+a:focus-visible {
+    outline: 2px solid #c4df65;
+    outline-offset: 3px;
+}
+
+/* 8. TABLETAS */
+@media screen and (max-width: 900px) {
+    body {
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 0 12px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    nav {
+        padding: 20px 10px;
+    }
+
+    main {
+        padding: 20px 15px 5px;
+    }
+
+    main h1 {
+        font-size: 25px;
+    }
+
+    main p {
+        padding: 20px;
+    }
+
+    aside {
+        padding: 10px 15px 25px;
+    }
+}
+
+/* 9. CELULARES */
+@media screen and (max-width: 600px) {
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+    }
+
+    header {
+        padding: 18px 15px;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    nav {
+        padding: 15px;
+        border-radius: 0 0 25px 25px;
+    }
+
+    nav h2 {
+        font-size: 16px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    main {
+        padding: 22px 15px 5px;
+    }
+
+    main h1 {
+        font-size: 23px;
+    }
+
+    main h2 {
+        font-size: 17px;
+    }
+
+    main p {
+        padding: 18px;
+        border-radius: 22px;
+        font-size: 13px;
+    }
+
+    aside {
+        padding: 10px 15px 25px;
+    }
+
+    aside img {
+        max-width: 100%;
+    }
+
+    footer {
+        padding: 20px 15px;
+        border-radius: 30px 30px 0 0;
+		
+		.seccion-tema {
+    margin: 25px 0 35px;
+}
+
+.seccion-tema > h2,
+main > h1 {
+    color: #c4df65;
+}
+
+.seccion-tema > h2 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.seccion-tema > h3 {
+    color: #c4df65;
+    font-size: 18px;
+    margin: 25px 0 15px;
+}
+
+/* Tarjetas de contenido */
+.tarjeta {
+    background-color: #d9d9d9;
+    color: #292929;
+    padding: 22px;
+    border-radius: 25px;
+    margin-bottom: 18px;
+    min-width: 0;
+}
+
+.tarjeta h3 {
+    color: #57518b;
+    font-size: 17px;
+    margin: 0 0 12px;
+}
+
+.tarjeta p {
+    background: transparent;
+    color: #292929;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.tarjeta ul {
+    padding-left: 22px;
+    margin: 10px 0 0;
+}
+
+.tarjeta li {
+    margin-bottom: 9px;
+    line-height: 1.6;
+}
+
+/* Tarjeta introductoria */
+main > .tarjeta {
+    border-left: 5px solid #c4df65;
+}
+
+/* Distribución de tarjetas */
+.rejilla-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.rejilla-tarjetas .tarjeta {
+    margin-bottom: 0;
+}
+
+/* Principios del diseño universal */
+.principio {
+    border-top: 4px solid #7770c9;
+}
+
+.principio h3 {
+    color: #57518b;
+}
+
+/* Ejemplo de Closed Captions */
+.ejemplo {
+    padding: 25px;
+    background-color: #29265e;
+    border-radius: 25px;
+}
+
+.ejemplo > h2 {
+    margin-top: 0;
+}
+
+.ejemplo > p {
+    background-color: #d9d9d9;
+    color: #292929;
+    padding: 22px;
+    border-radius: 20px;
+}
+
+.ejemplo-subtitulos {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px;
+    background-color: #605995;
+    border-radius: 18px;
+    margin-top: 20px;
+}
+
+.icono-cc {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 55px;
+    height: 42px;
+    background-color: #c4df65;
+    color: #29265e;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ejemplo-subtitulos h3 {
+    color: #c4df65;
+    margin: 0 0 8px;
+    font-size: 17px;
+}
+
+.ejemplo-subtitulos p {
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Accesibilidad: movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    nav a,
+    a {
+        transition: none;
+    }
+}
+
+/* Adaptación para tabletas */
+@media screen and (max-width: 900px) {
+    .rejilla-tarjetas {
+        gap: 12px;
+    }
+
+    .tarjeta {
+        padding: 18px;
+    }
+}
+
+/* Adaptación para celulares */
+@media screen and (max-width: 600px) {
+    .rejilla-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion-tema {
+        margin: 20px 0 28px;
+    }
+
+    .seccion-tema > h2 {
+        font-size: 21px;
+    }
+
+    .tarjeta {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .ejemplo {
+        padding: 16px;
+    }
+
+    .ejemplo-subtitulos {
+        flex-direction: column;
+    }
+	
+	/* Organiza el contenido principal */
+.contenido-destacado {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.8fr);
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Columna izquierda: texto */
+.texto-principal {
+    min-width: 0;
+}
+
+.texto-principal p {
+    background-color: #d9d9d9;
+    color: #292929;
+    padding: 25px;
+    border-radius: 25px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Columna derecha: imagen */
+.imagen-principal {
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-principal img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    border: 2px solid #a8c943;
+}
+
+/* Tarjetas con texto e imagen */
+.tarjeta-con-imagen {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(150px, 0.8fr);
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.tarjeta-con-imagen img {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: auto;
+    border: 2px solid #a8c943;
+}
+
+/* Adaptación para celulares */
+@media screen and (max-width: 600px) {
+    .contenido-destacado,
+    .tarjeta-con-imagen {
+        grid-template-columns: 1fr;
+    }
+
+    .imagen-principal img,
+    .tarjeta-con-imagen img {
+        max-width: 350px;
+    }
